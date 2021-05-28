@@ -14,35 +14,10 @@ const GetData = () => {
         let filteredJson = myJson.filter((item) => {
           if (item.name) return item;
         });
-         filteredJson.sort(function (a, b) {
-           return a.listId - b.listId || a.id - b.id;
-         });
-        // filteredJson.sort(function (a, b) {
-        //   if (a.listId > b.listId) return 1;
-        //   if (a.listId < b.listId) return -1;
-        //   return 0;
-        // });
-        // let listIds = new Set();
-        // filteredJson.forEach((element) => {
-        //   listIds.add(element.listId);
-        // });
-        // let newF = [];
-        // listIds.forEach((listId) => {
-        //   console.log(listId);
-        //   let subSet = filteredJson.filter((item) => {
-        //     if (item.listId === listId) return item;
-        //   });
-        //   subSet.sort(function (a, b) {
-        //     if (a.id > b.id) return 1;
-        //     if (a.id < b.id) return -1;
-        //     return 0;
-        //   });
-        //   console.log(subSet);
-        //   newF.push(...subSet);
-        // });
-        // console.log(newF);
+        filteredJson.sort(function (a, b) {
+          return a.listId - b.listId || a.id - b.id;
+        });
         setData(filteredJson);
-        console.log(data);
       });
   };
 
