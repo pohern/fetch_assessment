@@ -19,6 +19,11 @@ const GetData = () => {
         })
         .then((myJson) => {
           console.log(myJson);
+          myJson.sort(function (a, b) {
+            if (a.listId > b.listId) return 1;
+            else if (a.listId < b.listId) return -1;
+            else return 0;
+          });
           setData(myJson);
         });
     };
